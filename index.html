@@ -27,11 +27,11 @@
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Build 3.loader.js";
+      var loaderUrl = buildUrl + "/Build 5.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Build 3.data",
-        frameworkUrl: buildUrl + "/Build 3.framework.js",
-        codeUrl: buildUrl + "/Build 3.wasm",
+        dataUrl: buildUrl + "/Build 5.data",
+        frameworkUrl: buildUrl + "/Build 5.framework.js",
+        codeUrl: buildUrl + "/Build 5.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Biochemical_Pathways_Game",
@@ -73,6 +73,7 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
+					window.unityInstance = unityInstance;
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
@@ -83,5 +84,7 @@
       };
       document.body.appendChild(script);
     </script>
+		<script src="unity_save.js"></script>
   </body>
 </html>
+
