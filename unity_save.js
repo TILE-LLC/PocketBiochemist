@@ -20,6 +20,5 @@ window.onbeforeunload = function(event) {
     // alert("Are you sure you want to leave the page?");
     var confirmationMessage = "Are you sure you want to leave the page?";
     (event || window.event).returnValue = confirmationMessage; // For IE and Firefox
-    return;
-    // return confirmationMessage; // For Chrome and Safari
+    return confirmationMessage; // For Chrome and Safari
 };
